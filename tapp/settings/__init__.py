@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tapp.apps',
-    'tapp.apps.auth'
+    'tapp.apps.auth',
+    'tapp.apps.dashboard'
 ]
 
 MIDDLEWARE = [
