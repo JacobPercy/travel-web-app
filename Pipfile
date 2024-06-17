@@ -13,4 +13,4 @@ pytest-django = ">=4.8,<5.0.0"
 pytest-xdist = { version="*", extras=["psutil"] }
 
 [requires]
-python_version = ">=3.11"
+python_version = "3.11"
