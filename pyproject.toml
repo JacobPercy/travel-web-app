@@ -13,14 +13,14 @@ dynamic = ["dependencies"]
 license = { file = "LICENSE" }
 
 [tool.setuptools]
-packages = ["tin"]
+packages = ["tapp"]
 
 [tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE="tin.settings"
+DJANGO_SETTINGS_MODULE="tapp.settings"
 python_files="tests.py test_*.py *_tests.py"
 norecursedirs = ["media"]
 testpaths = "tapp"
-addopts = "--doctest-modules tin -n logical"
+addopts = "--doctest-modules tapp -n logical"
 doctest_optionflags = "NORMALIZE_WHITESPACE NUMBER"
 
 [tool.ruff]
