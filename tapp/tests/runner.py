@@ -12,7 +12,7 @@ class PytestRunner:
         self.keepdb = keepdb
 
     @classmethod
-    def add_arguments(cls, parser) -> None:  # noqa: ANN001
+    def add_arguments(cls, parser) -> None:
         """Add arguments to the parser."""
         parser.add_argument(
             "--keepdb", action="store_true", help="Preserves the test DB between runs."
