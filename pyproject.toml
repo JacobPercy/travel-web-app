@@ -1,0 +1,143 @@
+[project]
+name = "Travel-App"
+description = "An app to help you travel through stuff"
+readme = "README.md"
+authors = [
+    {name = "Aarush Deshpande", email = "do-not-reply@gmail.com"},
+    {name = "Jacob Percy", email = "do-not-reply@gmail.com"},
+    {name = "Shaurya Bisht", email = "do-not-reply@gmail.com"},
+]
+requires-python = ">=3.11"
+version = "1.0"
+dynamic = ["dependencies"]
+license = { file = "LICENSE" }
+
+[tool.setuptools]
+packages = ["tin"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE="tin.settings"
+python_files="tests.py test_*.py *_tests.py"
+norecursedirs = ["media"]
+
+[tool.ruff]
+extend-exclude = [
+  ".github",
+  ".env",
+  "env",
+  "secret",
+  "media",
+  "migrations",
+]
+
+show-fixes = false
+
+line-length = 100
+
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    # flake8-builtins
+    "A",
+    # flake8-annotations
+    "ANN",
+    # flake8-bugbear
+    "B",
+    # flake8-blind-except
+    "BLE",
+    # flake8-comprehensions
+    "C4",
+    # mccabe complexity
+    "C9",
+    # pydocstyle
+    "D",
+    # flake8-django
+    "DJ",
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # flake8-boolean-trap
+    "FBT",
+    # isort
+    "I",
+    # import conventions
+    "ICN",
+    # flake8-no-pep420
+    "INP",
+    # pep8-naming
+    "N",
+    # flake8-pie
+    "PIE",
+    # Pylint
+    "PL",
+    # Pytest
+    "PT",
+    # use pathlib
+    "PTH",
+    # pygrep hooks
+    "PGH",
+    # ruff
+    "RUF",
+    # flake8-simplify
+    "SIM",
+    # pyupgrade
+    "UP",
+]
+ignore = [
+  # typehint *args/**kwargs
+  "ANN002",
+  "ANN003",
+  # typehint self/cls
+  "ANN101",
+  "ANN102",
+  # branching
+  "PLR09",
+  # magic number comparison
+  "PLR2004",
+  # fixtures not returning anything should have leading underscore
+  "PT004",
+  # mutable class attrs annotated as typing.ClassVar
+  "RUF012",
+  # as recommended by https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+  "E111",
+  "E114",
+  "E117",
+  "E501",
+  "D206",
+  "D300",
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.isort]
+required-imports = ["from __future__ import annotations"]
+
+[tool.ruff.lint.flake8-pytest-style]
+fixture-parentheses = false
+mark-parentheses = false
+parametrize-names-type = "tuple"
+parametrize-values-type = "tuple"
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [
+  "F401",
+  "F403",
+]
+
+"*test*" = [
+  "FBT",
+]
+
+[tool.ruff.format]
+docstring-code-format = true
+line-ending = "lf"
+
+[tool.codespell]
+write-changes = true
+ignore-words-list = ["num", "ans"]
