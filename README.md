@@ -16,7 +16,8 @@ Then run the following script:
 ```shell
 git clone https://github.com/JacobPercy/travel-web-app.git tapp
 cd tapp
-pipenv install
+pipenv install --dev
+pre-commit install
 python3 manage.py migrate
 python3 manage.py runserver
 ```
