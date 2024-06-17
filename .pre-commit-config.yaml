@@ -17,12 +17,13 @@ repos:
     rev: v2.3.0
     hooks:
       - id: codespell
-        files: ^.*\.(py|md|rst)$
+        files: ^.+\.(py|md|rst)$
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.4.7
     hooks:
       - id: ruff
         args: [ "--fix", "--exit-non-zero-on-fix" ]
-        files: ^tapp/.*
+        files: ^tapp/.+
         name: ruff lint
+        exclude: ^tapp/.+/apps\.py
       - id: ruff-format

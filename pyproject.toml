@@ -100,6 +100,9 @@ ignore = [
   "PT004",
   # mutable class attrs annotated as typing.ClassVar
   "RUF012",
+  # we don't need module docstrings
+  "D100",
+  "D104",
   # as recommended by https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
   "E111",
   "E114",
