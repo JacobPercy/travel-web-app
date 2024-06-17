@@ -19,6 +19,9 @@ packages = ["tin"]
 DJANGO_SETTINGS_MODULE="tin.settings"
 python_files="tests.py test_*.py *_tests.py"
 norecursedirs = ["media"]
+testpaths = "tapp"
+addopts = "--doctest-modules tin -n logical"
+doctest_optionflags = "NORMALIZE_WHITESPACE NUMBER"
 
 [tool.ruff]
 extend-exclude = [
@@ -92,6 +95,8 @@ ignore = [
   # typehint self/cls
   "ANN101",
   "ANN102",
+  # typehints for special (__dunder__) methods
+  "ANN204",
   # branching
   "PLR09",
   # magic number comparison
@@ -103,6 +108,8 @@ ignore = [
   # we don't need module docstrings
   "D100",
   "D104",
+  # or docs in __init__
+  "D107",
   # as recommended by https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
   "E111",
   "E114",

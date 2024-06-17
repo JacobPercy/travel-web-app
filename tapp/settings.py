@@ -103,6 +103,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+TEST_RUNNER = "tapp.tests.runner.PytestRunner"
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
