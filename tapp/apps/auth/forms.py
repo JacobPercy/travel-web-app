@@ -1,15 +1,12 @@
 from __future__ import annotations
 
-from django import forms
-from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import UserCreationForm
 
 
-class SignupUserForm(forms.ModelForm):
-    template_name = "registration/signup.html"
+class SignupUserForm(UserCreationForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
-    class Meta:
-        model = get_user_model()
-        fields = [
-            "username",
-            "password",
-        ]
+        fields = ("username", "password1", "password2")
+        for field in fields:
+            self.fields[field].widget.attrs.update({"class": "form-control w-25"})

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block main %}
+  {% if form.errors %}
+    {{ form.errors }}
+  {% endif %}
+
+  <form method="POST" action="{% url 'auth:signup' %}">
+    {% csrf_token %}
+    {% for field in form %}
+      <div class="form-group">
+        <p>
+          {{ field.label_tag }}
+          <!-- Remember to put class as form-control! -->
+          {{ field }}
+          <small class="form-text text-muted">{{ field.help_text }}</small>
+        </p>
+      </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock main %}

@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 TEST_RUNNER = "tapp.tests.runner.PytestRunner"
 
 LOGIN_URL = reverse_lazy("auth:login")
-LOGIN_REDIRECT_URL = reverse_lazy("dashboard:index")
+LOGIN_REDIRECT_URL = reverse_lazy("dashboard:startup")
 LOGOUT_REDIRECT_URL = LOGIN_REDIRECT_URL
 
 
@@ -129,9 +129,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_DIRS = (
-    BASE_DIR / "static",
+MEDIA_URL = '/media/'
+STATIC_URL = '/static/'
+STATIC_ROOT = 'serve'
+STATICFILES_DIRS = (
+    BASE_DIR / 'static/',
 )
 
 # Default primary key field type
