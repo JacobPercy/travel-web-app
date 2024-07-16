@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 django = "~=5.0"
 typing-extensions = "*"
+celery = "*"
+redis = "*"
 
 [dev-packages]
 pre-commit = "*"
