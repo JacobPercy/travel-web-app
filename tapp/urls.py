@@ -24,4 +24,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("account/", include("tapp.apps.auth.urls", namespace="auth")),
     path("", include("tapp.apps.dashboard.urls", namespace="dashboard")),
+    path("learn/", include("tapp.apps.learn.urls", namespace="learn")),
 ]
