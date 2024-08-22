@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tapp.apps',
     'tapp.apps.auth',
-    'tapp.apps.dashboard'
+    'tapp.apps.dashboard',
+    'tapp.apps.learn',
 ]
 
 MIDDLEWARE = [
